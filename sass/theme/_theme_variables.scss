@@ -1,0 +1,79 @@
+//Font Import
+@import url("https://use.typekit.net/eig1cfe.css");
+:root {
+  --color-primary: #e71c39;
+  --color-body-text: #333333;
+  --color-border: #b3b3b3;
+  --font-body: Open Sans, Open Sans, sans-serif;
+  --font-body-bold-weight: 600;
+  --font-body-size: 12;
+}
+// Text colors
+$color-body-text: #f8f9fa;
+
+// Background colors
+$color-body: #343a40;
+
+// Placeholders
+$placeholder-color-foreground: #161d25;
+$placeholder-color-background: #f9fafb; 
+
+// Other colors
+$color-accent: #94908f;
+$color-border: #F04355;
+
+// Helper colors for form error states
+$color-disabled: #000000;
+$color-disabled-border: #000000;
+$color-error: #ff6d6d;
+$color-error-bg: #ffffff;
+$color-success: #000000;
+$color-success-bg: #000000;
+
+
+// Bootstrap Colors
+$primary: #F04355;
+$secondary: #94908f;
+$danger: #ff6d6d;
+$success: #56AD6A;
+$font-body-color: #ffffff;
+
+// Typography
+$font-heading: Magistral, sans-serif;
+$font-body: var(--font-body);
+$font-body-weight: var(--font-body-weight);
+$font-body-style: var(--font-body-style);
+$font-body-bold-weight: var(--font-body-bold-weight);
+$font-body-size: var(--font-body-size);
+
+$font-alt: Magistral, sans-serif;
+
+// Transitions
+$transition-duration: 250ms;
+$transition-timing: ease-in-out;
+
+$grid-columns:      12;
+$grid-gutter-width: 30px;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+        xs: 0,
+  // Small screen / phone
+        sm: 576px,
+  // Medium screen / tablet
+        md: 768px,
+  // Large screen / desktop
+        lg: 992px,
+  // Extra large screen
+        xl: 1200px,
+  // wide desktop
+        xxl: 1400px
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1340px
+);

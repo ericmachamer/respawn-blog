@@ -1,0 +1,15 @@
+#wrapper-footer {
+  #footer-branding {
+    img {
+      max-width: 180px;
+      min-width: 90px;
+      width: 15vw;
+    }
+  }
+  #footer-nav {
+    .recent-posts {
+      list-style: none;
+      padding: 0;
+    }
+  }
+}

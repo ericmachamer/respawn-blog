@@ -1,0 +1,12 @@
+#home-hero {
+  #hero-bg {
+    --x: 0px;
+    --y: 0px;
+    top: var(--y);
+    left: var(--x);
+    position: relative;
+  }
+  .btn {
+    font-size: 1.2rem;
+  }
+}

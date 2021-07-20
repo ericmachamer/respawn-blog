@@ -1,0 +1,55 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+body {
+  font-family: var(--font-body);
+  color: $font-body-color;
+  background-color: $color-body;
+  overflow-x: hidden;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: $font-body-bold-weight;
+  a {
+    color: $font-body-color;
+  }
+}
+.home {
+  article {
+    &.post {
+      img {
+        transition: all 300ms;
+      }
+      &:hover {
+        img {
+          transform: translateY(-.9rem);
+          box-shadow: $box-shadow;
+        }
+      }
+    }
+  }
+}
+
+#single-wrapper {
+  .post-navigation {
+    .post-nav {
+      padding: 5% 4%;
+      overflow: hidden;
+      &:hover {
+        .background {
+          background-color: darken($dark, 1.1);
+          transform: scale(1.05);
+        }
+      }
+      .background {
+        background: $dark no-repeat center;
+        background-size: cover;
+        transition: all 300ms;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+  }
+}
