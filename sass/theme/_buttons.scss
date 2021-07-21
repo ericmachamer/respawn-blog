@@ -3,3 +3,22 @@
   font-weight: 600;
   padding: .5rem 1.5rem;
 }
+.entry-tags {
+  a {
+    background: $primary;
+    color: $white;
+    text-decoration: none;
+    border-radius: $border-radius-pill;
+    padding: $btn-padding-y $btn-padding-x;
+    margin: 0 5px;
+    font-family: $btn-font-family;
+    font-size: .8rem;
+    line-height: 1.2rem;
+    display: inline-block;
+    transition: all 300ms;
+    white-space: nowrap;
+    &:hover {
+      background-color: darken($primary, $btn-hover-bg-shade-amount);
+    }
+  }
+}

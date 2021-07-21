@@ -77,6 +77,7 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 		 */
 		add_image_size( 'card-image', 730, 310, true );
 		add_image_size( 'post-list', 730, 516, true );
+		add_image_size( 'banner', 1920 );
 
 		/*
 		 * Adding support for Widget edit icons in customizer

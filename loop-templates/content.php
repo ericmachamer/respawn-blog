@@ -34,7 +34,7 @@ $i = $args['i'];
 			<?php if ( 'post' === get_post_type() ) : ?>
 
 				<div class="entry-meta mb-3">
-					<?php understrap_posted_on(['by-line']); ?>
+					<?php understrap_posted_on(['by-line', 'posted-on-text']); ?>
 				</div><!-- .entry-meta -->
 
 			<?php endif; ?>

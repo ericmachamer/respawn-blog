@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<footer class="entry-footer">
 
-		<?php understrap_entry_footer(); ?>
+		<?php understrap_entry_footer(['tags']); ?>
 
 	</footer><!-- .entry-footer -->
 

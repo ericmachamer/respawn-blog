@@ -26,9 +26,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php understrap_posted_on(['by-line', 'posted-on-text']); ?>
 
 				</div><!-- .entry-meta -->
+				<?php if(has_tag()) { ?>
+					<div class="entry-tags mt-3">
+						<?php understrap_entry_footer(['edit']); ?>
+					</div><!-- entry-tags -->
+				<?php } ?>
 
 			</header><!-- .entry-header -->
-			<main class="site-main col-8" id="main">
+			<main class="site-main col-12 col-md-8" id="main">
 
 				<?php
 				while ( have_posts() ) {

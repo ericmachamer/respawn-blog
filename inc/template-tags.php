@@ -32,9 +32,8 @@ if ( ! function_exists( 'understrap_posted_on' ) ) {
 			$posted_on   = apply_filters(
 				'understrap_posted_on',
 				sprintf(
-					'<span class="posted-on">%1$s <a href="%2$s" rel="bookmark">%3$s</a></span>',
+					'<span class="posted-on">%1$s %2$s</span>',
 					esc_html_x( 'Posted on', 'post date', 'understrap' ),
-					esc_url( get_permalink() ),
 					apply_filters( 'understrap_posted_on_time', $time_string )
 				)
 			);
@@ -42,8 +41,7 @@ if ( ! function_exists( 'understrap_posted_on' ) ) {
 			$posted_on   = apply_filters(
 				'understrap_posted_on',
 				sprintf(
-					'<span class="posted-on"><a href="%1$s" rel="bookmark">%2$s</a></span>',
-					esc_url( get_permalink() ),
+					'<span class="posted-on">%1$s</span>',
 					apply_filters( 'understrap_posted_on_time', $time_string )
 				)
 			);
@@ -67,7 +65,7 @@ if ( ! function_exists( 'understrap_entry_footer' ) ) {
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function understrap_entry_footer() {
+	function understrap_entry_footer($excludes = []) {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
@@ -77,21 +75,25 @@ if ( ! function_exists( 'understrap_entry_footer' ) ) {
 				printf( '<span class="cat-links">' . esc_html__( 'Posted in %s', 'understrap' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'understrap' ) );
-			if ( $tags_list ) {
-				/* translators: %s: Tags of current post */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %s', 'understrap' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			if(!in_array('tags', $excludes)) {
+				$tags_list = get_the_tag_list( '', esc_html__( '', 'understrap' ) );
+				if ( $tags_list ) {
+					/* translators: %s: Tags of current post */
+					printf( '<span class="tags-links">' . esc_html__( '%s', 'understrap' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				}
 			}
 		}
-		edit_post_link(
-			sprintf(
-				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'understrap' ),
-				the_title( '<span class="sr-only">"', '"</span>', false )
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
+		if(!in_array('edit', $excludes)) {
+			edit_post_link(
+				sprintf(
+					/* translators: %s: Name of current post */
+					esc_html__( 'Edit %s', 'understrap' ),
+					the_title( '<span class="sr-only">"', '"</span>', false )
+				),
+				'<span class="edit-link">',
+				'</span>'
+			);
+		}
 	}
 }
 
