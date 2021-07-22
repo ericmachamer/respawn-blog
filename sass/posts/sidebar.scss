@@ -1,4 +1,4 @@
-.wpp-list {
+#recent-posts-list {
   padding: 0;
   li {
     position: relative;
@@ -30,9 +30,6 @@
       opacity: 0;
       transition: all 300ms;
       background-color: $dark;
-      .wpp_def_no_src {
-        display: none;
-      }
       img {
         object-fit: cover;
         object-position: center;

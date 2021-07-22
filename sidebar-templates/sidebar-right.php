@@ -10,20 +10,34 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 
-<div class="offset-lg-1 col-12 col-md-4 col-lg-3 widget-area" id="right-sidebar" role="complementary">
-
-  <?php
-    $args = array(
-      'header' => 'Popular Posts',
-      'post_html' => '<li class="p-4"><div class="background">{thumb}</div><p class="title"><a class="stretched-link h5" href="{url}">{text_title}</a></p><p class="date small">{date}</p></li>',
-      'thumbnail_width' => 500,
-      'stats_date' => 1,
-      'pid' => $post->ID
-    );
-
-    wpp_get_mostpopular($args);
+<div class="col-12 col-md-4 col-lg-3 offset-lg-1 widget-area" id="right-sidebar" role="complementary">
+<div id="recent-posts">
+  <h4>Recent Posts</h4>
+  <ul id="recent-posts-list">
+    <?php
+      $recent_posts = wp_get_recent_posts(array(
+        'numberposts' => 3,
+        'post_status' => 'publish',
+        'exclude'     => $post->ID
+      ));
+      foreach($recent_posts as $post) {
+      ?>
+        <li class="mb-3">
+          <div class="background">
+            <?php if(get_the_post_thumbnail_url($post['ID'])) { ?>
+              <img src="<?= get_the_post_thumbnail_url($post['ID']); ?>" alt="<?= get_the_title($post['ID']); ?>" />
+            <?php } ?>
+          </div>
+          <div class="post-data p-4">
+            <h5><a class="stretched-link" href="<?php the_permalink($post['ID']); ?>"><?= get_the_title($post['ID']); ?></a></h5>
+            <p><?= get_the_date('', $post['ID']); ?></p>
+          </div>
+        </li>
+      <?php
+      } //end foreach
   ?>
-
-  <?php dynamic_sidebar( 'right-sidebar' ); ?>
+  </ul>
+</div>
+<?php dynamic_sidebar( 'right-sidebar' ); ?> 
 
 </div><!-- #right-sidebar -->

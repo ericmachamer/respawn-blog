@@ -86,7 +86,7 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 				<?php
 				if ( $next_post ) {
 				?>
-					<div class="prev-nav post-nav col-12 col-md-6 px-5 position-relative">
+					<div class="prev-nav post-nav col-12<?php if($prev_post) { ?> col-md-6<?php } ?> px-5 position-relative">
 						<div class="background" <?php if(get_the_post_thumbnail_url($next_post->ID)) { ?>style="background-image: url(<?= get_the_post_thumbnail_url($next_post->ID, 'banner'); ?>);"<?php } ?>></div>
 						<h6 class="mb-0">Previous Post</h6>
 						<a class="stretched-link display-6 text-decoration-none text-light" href="<?= get_permalink($next_post->ID); ?>"><?= apply_filters( 'the_title', $next_post->post_title ); ?></a></div>
@@ -94,7 +94,7 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 				}
 				if ( $prev_post ) {
 				?>
-					<div class="next-nav post-nav col-12 col-md-6 px-5 position-relative">
+					<div class="next-nav post-nav col-12<?php if($next_post) { ?> col-md-6<?php } ?> px-5 position-relative">
 						<div class="background" <?php if(get_the_post_thumbnail_url($prev_post->ID)) { ?>style="background-image: url(<?= get_the_post_thumbnail_url($prev_post->ID, 'banner'); ?>);"<?php } ?>></div>
 						<h6 class="mb-0">Next Post</h6>
 						<a class="stretched-link display-6 text-decoration-none text-light" href="<?= get_permalink($prev_post->ID); ?>"><?= apply_filters( 'the_title', $prev_post->post_title ); ?></a></div>				
