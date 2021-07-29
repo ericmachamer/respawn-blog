@@ -16,7 +16,7 @@ $i = $args['i'];
 		if(get_the_post_thumbnail()) {
 	?>
 		<div class="col-12 col-lg-6<?php if($i%2 == 0) { echo ' order-lg-last'; }; ?>">
-			<a href="<?php esc_url( get_permalink() ); ?>"><?php echo get_the_post_thumbnail(get_the_ID(), 'post-list', ['class' => 'rounded'] ); ?></a>
+			<a href="<?= get_permalink(); ?>"><?php echo get_the_post_thumbnail(get_the_ID(), 'post-list', ['class' => 'rounded'] ); ?></a>
 		</div>
 	<?php
 		}

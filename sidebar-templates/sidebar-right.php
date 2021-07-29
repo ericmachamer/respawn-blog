@@ -40,4 +40,6 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <?php dynamic_sidebar( 'right-sidebar' ); ?> 
 
+<?php wp_reset_postdata(); ?>
+
 </div><!-- #right-sidebar -->
