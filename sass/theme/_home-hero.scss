@@ -1,4 +1,5 @@
 #home-hero {
+  max-height: 90vh;
   #hero-bg {
     --x: 0px;
     --y: 0px;
@@ -6,7 +7,16 @@
     left: var(--x);
     position: relative;
   }
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba($black, .65);
+  }
   .btn {
     font-size: 1.2rem;
+  }
+  .card-img-overlay {
+    z-index: 100;
   }
 }

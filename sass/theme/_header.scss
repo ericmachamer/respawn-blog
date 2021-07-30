@@ -1,4 +1,6 @@
 #main-nav {
+  position: relative;
+  z-index: 100;
   .navbar-brand {
     img {
       width: 15vw;
